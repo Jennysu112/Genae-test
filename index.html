@@ -3,21 +3,24 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>GENAE · Jelly — Brand Landing</title>
+<title>GENAE — Brand Landing</title>
 <meta name="description" content="Gentle, Real, Free. A five-senses brand that blends healing × art × aesthetics." />
 <style>
-
   :root{
-    --bg:#f8f5f2;
+    --bg:#f8f5f2; /* latte-beige */
     --panel:#ffffff;
-    --ink:#3f3a37;
-    --muted:#7c6f6a;
-    --accent:#b99286;
+    --ink:#3f3a37; /* espresso */
+    --muted:#7c6f6a; /* cocoa */
+    --accent:#b99286; /* dusty rose */
     --shadow:0 10px 30px rgba(0,0,0,.06);
     --radius:16px;
-    --maxw:1000px;
+    --maxw:1100px;
   }
   *{box-sizing:border-box}
+  html:focus-within{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){
+    html:focus-within{scroll-behavior:auto}
+  }
   html,body{margin:0;padding:0}
   body{
     font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -43,7 +46,7 @@
   }
   .lang{display:flex;gap:8px;align-items:center}
   .hero{padding:72px 24px}
-  .hero .grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;max-width:var(--maxw);margin:0 auto}
+  .hero .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center;max-width:var(--maxw);margin:0 auto}
   .eyebrow{color:var(--accent);text-transform:uppercase;letter-spacing:.25em;font-size:.8rem}
   h1{font-size:clamp(28px,4.2vw,44px);margin:.35rem 0 .75rem 0;line-height:1.25}
   .sub{color:var(--muted);max-width:52ch}
@@ -75,7 +78,7 @@
   .mile{background:#fff;border:1px dashed #e2d6cf;border-radius:12px;padding:14px 16px}
   .mile h4{margin:.2rem 0 .35rem;font-size:1rem;color:#5b4b45}
   .mile p{margin:.2rem 0;color:var(--muted);font-size:.95rem}
-  footer{padding:42px 24px;color:var(--muted)}
+  footer{padding:42px 24px;color:#7c6f6a}
   .foot{max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:12px;border-top:1px solid rgba(0,0,0,.06);padding-top:16px}
   .social{display:flex;gap:10px}
   .social a{padding:.45rem .8rem;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:999px}
@@ -88,14 +91,13 @@
     .cards{grid-template-columns:1fr}
     .road{grid-template-columns:1fr}
   }
-
 </style>
 </head>
 <body>
 
 <header class="nav">
   <div class="row">
-    <div class="brand">GENAE <strong>·</strong> Jelly</div>
+    <div class="brand">GENAE <strong>·</strong></div>
     <nav class="links">
       <a class="btn" href="#about">About</a>
       <a class="btn" href="#features">Features</a>
@@ -111,15 +113,13 @@
     <div>
       <div class="eyebrow">Gentle · Real · Free</div>
       <h1>Heal the senses and bring a little softness to the world.</h1>
-      <p class="sub">We believe beauty isn’t perfection—it’s being understood. GENAE and Jelly weave healing × art × aesthetics into daily life: between words and colors, scents and space, movement and stillness, we walk with you back to calm and hope.</p>
+      <p class="sub">We believe beauty isn’t perfection—it’s being understood. GENAE weaves healing × art × aesthetics into daily life: between words and colors, scents and space, movement and stillness.</p>
       <div class="cta">
         <a class="btn-primary" href="#features">Explore highlights</a>
         <a class="btn-ghost" href="#about">Learn the philosophy</a>
       </div>
     </div>
-    <div class="hero-media">
-      <div class="media-box">Main visual / Video</div>
-    </div>
+    <div class="hero-media"><img src="hero.png" alt="GENAE main visual" style="width:100%;border-radius:12px;"></div>
   </div>
 </section>
 
@@ -128,7 +128,7 @@
     <article class="card">
       <span class="tag">Writing · Healing Notes</span>
       <h3>A moment of calm, daily</h3>
-      <p>Short lines and generous whitespace to soften your day—perfect for IG or blog series.</p>
+      <p>Short lines and generous whitespace—perfect for IG or blog series.</p>
       <p><a href="#">Read more →</a></p>
     </article>
     <article class="card">
@@ -179,8 +179,8 @@
     <h2 style="margin-top:0">Contact & Social</h2>
     <p>For collaborations / exhibitions / workshops / cross-disciplinary projects, drop us a line.</p>
     <div class="social" style="margin-top:10px">
-      <a href="#" aria-label="Instagram">Instagram</a>
-      <a href="#" aria-label="YouTube">YouTube</a>
+      <a href="https://www.instagram.com/genae_official/" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
+      <a href="#" target="_blank" rel="noopener" aria-label="YouTube">YouTube</a>
       <a href="mailto:hello@example.com" aria-label="Email">Email</a>
     </div>
   </div>
@@ -188,7 +188,7 @@
 
 <footer>
   <div class="foot">
-    <div>© <span id="y"></span> GENAE · Jelly — Gentle, Real, Free.</div>
+    <div>© <span id="y"></span> GENAE — Gentle, Real, Free.</div>
     <div class="social">
       <a href="#top">Back to top ↑</a>
     </div>
