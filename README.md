@@ -1,4 +1,4 @@
-# GENAE — Static Site (No 'Jelly', IG integrated)
+# GENAE — Static Site
 - `index.html` (EN), `zh.html` (ZH-TW)
 - Brand name unified to **GENAE**
 - Instagram linked to https://www.instagram.com/genae_official/
