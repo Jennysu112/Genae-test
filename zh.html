@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>GENAE · Jelly — 品牌形象頁</title>
+<meta name="description" content="Gentle, Real, Free. 以療癒 × 藝術 × 質感打造的五感品牌形象首頁。" />
+<style>
+
+  :root{
+    --bg:#f8f5f2;
+    --panel:#ffffff;
+    --ink:#3f3a37;
+    --muted:#7c6f6a;
+    --accent:#b99286;
+    --shadow:0 10px 30px rgba(0,0,0,.06);
+    --radius:16px;
+    --maxw:1000px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 Roboto, "Noto Sans TC", "PingFang TC", "Helvetica Neue", Arial, sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.7;
+    letter-spacing:.2px;
+  }
+  a{color:var(--accent);text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:24px}
+  header.nav{
+    position:sticky;top:0;z-index:20;background:rgba(248,245,242,.75);
+    backdrop-filter:saturate(120%) blur(6px);
+    border-bottom:1px solid rgba(0,0,0,.05);
+  }
+  .nav .row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 24px;max-width:var(--maxw);margin:0 auto}
+  .brand{font-weight:700;letter-spacing:.4px}
+  .brand strong{color:var(--accent)}
+  .nav a.btn{
+    padding:.55rem .9rem;border:1px solid rgba(0,0,0,.08);border-radius:999px;background:#fff;color:var(--ink);
+    box-shadow:0 2px 10px rgba(0,0,0,.04);
+  }
+  .lang{display:flex;gap:8px;align-items:center}
+  .hero{padding:72px 24px}
+  .hero .grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;max-width:var(--maxw);margin:0 auto}
+  .eyebrow{color:var(--accent);text-transform:uppercase;letter-spacing:.25em;font-size:.8rem}
+  h1{font-size:clamp(28px,4.2vw,44px);margin:.35rem 0 .75rem 0;line-height:1.25}
+  .sub{color:var(--muted);max-width:52ch}
+  .cta{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap}
+  .btn-primary,.btn-ghost{
+    border-radius:999px;padding:.8rem 1.15rem;font-weight:600;letter-spacing:.3px;
+  }
+  .btn-primary{background:var(--accent);color:#fff;border:1px solid transparent;box-shadow:var(--shadow)}
+  .btn-ghost{background:#fff;border:1px solid rgba(0,0,0,.06);color:var(--ink)}
+  .hero-media{
+    background:linear-gradient(135deg,#fff, #f6ede8);
+    border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);border:1px solid rgba(0,0,0,.05);
+  }
+  .media-box{
+    aspect-ratio:4/3;border-radius:12px;background:#e9dfd9;display:grid;place-items:center;
+    color:#735b53;font-weight:600;letter-spacing:.2em;
+  }
+  .features{padding:24px}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:var(--maxw);margin:0 auto}
+  .card{background:var(--panel);border-radius:var(--radius);padding:18px 18px 16px;border:1px solid rgba(0,0,0,.06);box-shadow:var(--shadow)}
+  .card h3{margin:.25rem 0 .35rem 0;font-size:1.05rem}
+  .card p{margin:.25rem 0;color:var(--muted)}
+  .tag{display:inline-block;background:#f4ece8;color:#7d5f56;border:1px solid #eadcd5;padding:.2rem .55rem;border-radius:999px;font-size:.8rem;margin-top:.35rem}
+  .section{padding:64px 24px}
+  .panel{max-width:var(--maxw);margin:0 auto;background:var(--panel);border:1px solid rgba(0,0,0,.06);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px}
+  .quote{font-size:1.2rem;color:#5d4d47;border-left:4px solid var(--accent);padding-left:14px;margin:0 0 6px 0}
+  .by{color:var(--muted);font-size:.95rem}
+  .road{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+  .mile{background:#fff;border:1px dashed #e2d6cf;border-radius:12px;padding:14px 16px}
+  .mile h4{margin:.2rem 0 .35rem;font-size:1rem;color:#5b4b45}
+  .mile p{margin:.2rem 0;color:var(--muted);font-size:.95rem}
+  footer{padding:42px 24px;color:var(--muted)}
+  .foot{max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:12px;border-top:1px solid rgba(0,0,0,.06);padding-top:16px}
+  .social{display:flex;gap:10px}
+  .social a{padding:.45rem .8rem;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:999px}
+  @media (max-width:900px){
+    .hero .grid{grid-template-columns:1fr}
+    .cards{grid-template-columns:1fr 1fr}
+    .road{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:560px){
+    .cards{grid-template-columns:1fr}
+    .road{grid-template-columns:1fr}
+  }
+
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="row">
+    <div class="brand">GENAE <strong>·</strong> Jelly</div>
+    <nav class="links">
+      <a class="btn" href="#about">理念</a>
+      <a class="btn" href="#features">精選</a>
+      <a class="btn" href="#roadmap">未來計畫</a>
+      <a class="btn" href="#contact">聯絡</a>
+    </nav>
+    <div class="lang"><a class="btn" href="./index.html" aria-label="Switch to English">EN</a></div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="grid">
+    <div>
+      <div class="eyebrow">Gentle · Real · Free</div>
+      <h1>以五感療癒，讓世界多一點柔軟。</h1>
+      <p class="sub">我們相信：美不是完美，而是被理解。GENAE 與 Jelly 將療癒 × 藝術 × 質感融合為日常的呼吸——在字裡行間、色彩與香氣、身體律動與空間留白之間，陪你找回平靜與希望。</p>
+      <div class="cta">
+        <a class="btn-primary" href="#features">探索精選內容</a>
+        <a class="btn-ghost" href="#about">認識品牌理念</a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <div class="media-box">主視覺 / 影片占位</div>
+    </div>
+  </div>
+</section>
+
+<section id="features" class="features">
+  <div class="cards">
+    <article class="card">
+      <span class="tag">文字 · Healing Notes</span>
+      <h3>每天一點平靜</h3>
+      <p>一句短句、一道留白，喚醒你對自己的溫柔。適合 IG / 網誌連載。</p>
+      <p><a href="#">閱讀更多 →</a></p>
+    </article>
+    <article class="card">
+      <span class="tag">藝術 · Visual</span>
+      <h3>柔霧色插畫與攝影</h3>
+      <p>以灰粉、米白與自然紋理，描繪「不完美的美」。</p>
+      <p><a href="#">作品集 →</a></p>
+    </article>
+    <article class="card">
+      <span class="tag">肢體 × 音樂</span>
+      <h3>身體的節奏</h3>
+      <p>舞蹈短片與治癒歌單，讓身體成為情緒的出口。</p>
+      <p><a href="#">觀看 / 聆聽 →</a></p>
+    </article>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <div class="panel">
+    <p class="quote">「美不是完美，而是被理解。」</p>
+    <p class="by">— 品牌理念</p>
+    <p>我們希望以平等的姿態陪你同行：不是拯救，而是相伴；不是格式化的答案，而是給你能呼吸的空間。從文字、藝術、香氛、空間、觸感到對話，我們將五感作為橋樑，連結內在的安穩與外在的世界。</p>
+  </div>
+</section>
+
+<section id="roadmap" class="section">
+  <div class="panel">
+    <h2 style="margin-top:0">未來計畫</h2>
+    <div class="road">
+      <div class="mile">
+        <h4>Q1 · 線上內容</h4>
+        <p>開啟「Daily Healing」短文與插畫連載，建立電子報。</p>
+      </div>
+      <div class="mile">
+        <h4>Q2 · 五感小物</h4>
+        <p>推出香氛卡 / 小蠟燭與語錄卡片，主題：Hope · Calm · Embrace。</p>
+      </div>
+      <div class="mile">
+        <h4>Q3 · 體驗與空間</h4>
+        <p>策辦快閃「五感療癒展」：氣味、音樂、觸感與留白的房間。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <div class="panel">
+    <h2 style="margin-top:0">聯絡與社群</h2>
+    <p>合作 / 展覽 / 教學 / 跨域計畫，歡迎寫信或私訊我們。</p>
+    <div class="social" style="margin-top:10px">
+      <a href="#" aria-label="Instagram">Instagram</a>
+      <a href="#" aria-label="YouTube">YouTube</a>
+      <a href="mailto:hello@example.com" aria-label="Email">Email</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot">
+    <div>© <span id="y"></span> GENAE · Jelly — Gentle, Real, Free.</div>
+    <div class="social">
+      <a href="#top">回到頂部 ↑</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

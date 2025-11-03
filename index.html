@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>GENAE · Jelly — Brand Landing</title>
+<meta name="description" content="Gentle, Real, Free. A five-senses brand that blends healing × art × aesthetics." />
+<style>
+
+  :root{
+    --bg:#f8f5f2;
+    --panel:#ffffff;
+    --ink:#3f3a37;
+    --muted:#7c6f6a;
+    --accent:#b99286;
+    --shadow:0 10px 30px rgba(0,0,0,.06);
+    --radius:16px;
+    --maxw:1000px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 Roboto, "Noto Sans TC", "PingFang TC", "Helvetica Neue", Arial, sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.7;
+    letter-spacing:.2px;
+  }
+  a{color:var(--accent);text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:24px}
+  header.nav{
+    position:sticky;top:0;z-index:20;background:rgba(248,245,242,.75);
+    backdrop-filter:saturate(120%) blur(6px);
+    border-bottom:1px solid rgba(0,0,0,.05);
+  }
+  .nav .row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 24px;max-width:var(--maxw);margin:0 auto}
+  .brand{font-weight:700;letter-spacing:.4px}
+  .brand strong{color:var(--accent)}
+  .nav a.btn{
+    padding:.55rem .9rem;border:1px solid rgba(0,0,0,.08);border-radius:999px;background:#fff;color:var(--ink);
+    box-shadow:0 2px 10px rgba(0,0,0,.04);
+  }
+  .lang{display:flex;gap:8px;align-items:center}
+  .hero{padding:72px 24px}
+  .hero .grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;max-width:var(--maxw);margin:0 auto}
+  .eyebrow{color:var(--accent);text-transform:uppercase;letter-spacing:.25em;font-size:.8rem}
+  h1{font-size:clamp(28px,4.2vw,44px);margin:.35rem 0 .75rem 0;line-height:1.25}
+  .sub{color:var(--muted);max-width:52ch}
+  .cta{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap}
+  .btn-primary,.btn-ghost{
+    border-radius:999px;padding:.8rem 1.15rem;font-weight:600;letter-spacing:.3px;
+  }
+  .btn-primary{background:var(--accent);color:#fff;border:1px solid transparent;box-shadow:var(--shadow)}
+  .btn-ghost{background:#fff;border:1px solid rgba(0,0,0,.06);color:var(--ink)}
+  .hero-media{
+    background:linear-gradient(135deg,#fff, #f6ede8);
+    border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);border:1px solid rgba(0,0,0,.05);
+  }
+  .media-box{
+    aspect-ratio:4/3;border-radius:12px;background:#e9dfd9;display:grid;place-items:center;
+    color:#735b53;font-weight:600;letter-spacing:.2em;
+  }
+  .features{padding:24px}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:var(--maxw);margin:0 auto}
+  .card{background:var(--panel);border-radius:var(--radius);padding:18px 18px 16px;border:1px solid rgba(0,0,0,.06);box-shadow:var(--shadow)}
+  .card h3{margin:.25rem 0 .35rem 0;font-size:1.05rem}
+  .card p{margin:.25rem 0;color:var(--muted)}
+  .tag{display:inline-block;background:#f4ece8;color:#7d5f56;border:1px solid #eadcd5;padding:.2rem .55rem;border-radius:999px;font-size:.8rem;margin-top:.35rem}
+  .section{padding:64px 24px}
+  .panel{max-width:var(--maxw);margin:0 auto;background:var(--panel);border:1px solid rgba(0,0,0,.06);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px}
+  .quote{font-size:1.2rem;color:#5d4d47;border-left:4px solid var(--accent);padding-left:14px;margin:0 0 6px 0}
+  .by{color:var(--muted);font-size:.95rem}
+  .road{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+  .mile{background:#fff;border:1px dashed #e2d6cf;border-radius:12px;padding:14px 16px}
+  .mile h4{margin:.2rem 0 .35rem;font-size:1rem;color:#5b4b45}
+  .mile p{margin:.2rem 0;color:var(--muted);font-size:.95rem}
+  footer{padding:42px 24px;color:var(--muted)}
+  .foot{max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:12px;border-top:1px solid rgba(0,0,0,.06);padding-top:16px}
+  .social{display:flex;gap:10px}
+  .social a{padding:.45rem .8rem;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:999px}
+  @media (max-width:900px){
+    .hero .grid{grid-template-columns:1fr}
+    .cards{grid-template-columns:1fr 1fr}
+    .road{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:560px){
+    .cards{grid-template-columns:1fr}
+    .road{grid-template-columns:1fr}
+  }
+
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="row">
+    <div class="brand">GENAE <strong>·</strong> Jelly</div>
+    <nav class="links">
+      <a class="btn" href="#about">About</a>
+      <a class="btn" href="#features">Features</a>
+      <a class="btn" href="#roadmap">Roadmap</a>
+      <a class="btn" href="#contact">Contact</a>
+    </nav>
+    <div class="lang"><a class="btn" href="./zh.html" aria-label="切換到中文">中文</a></div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="grid">
+    <div>
+      <div class="eyebrow">Gentle · Real · Free</div>
+      <h1>Heal the senses and bring a little softness to the world.</h1>
+      <p class="sub">We believe beauty isn’t perfection—it’s being understood. GENAE and Jelly weave healing × art × aesthetics into daily life: between words and colors, scents and space, movement and stillness, we walk with you back to calm and hope.</p>
+      <div class="cta">
+        <a class="btn-primary" href="#features">Explore highlights</a>
+        <a class="btn-ghost" href="#about">Learn the philosophy</a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <div class="media-box">Main visual / Video</div>
+    </div>
+  </div>
+</section>
+
+<section id="features" class="features">
+  <div class="cards">
+    <article class="card">
+      <span class="tag">Writing · Healing Notes</span>
+      <h3>A moment of calm, daily</h3>
+      <p>Short lines and generous whitespace to soften your day—perfect for IG or blog series.</p>
+      <p><a href="#">Read more →</a></p>
+    </article>
+    <article class="card">
+      <span class="tag">Art · Visual</span>
+      <h3>Soft-haze illustrations & photography</h3>
+      <p>Greige, off-white, and natural textures that celebrate imperfect beauty.</p>
+      <p><a href="#">Portfolio →</a></p>
+    </article>
+    <article class="card">
+      <span class="tag">Body × Music</span>
+      <h3>The rhythm of the body</h3>
+      <p>Dance reels and healing playlists that turn movement into an emotional outlet.</p>
+      <p><a href="#">Watch / Listen →</a></p>
+    </article>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <div class="panel">
+    <p class="quote">“Beauty isn’t perfection—it’s being understood.”</p>
+    <p class="by">— Our philosophy</p>
+    <p>We accompany you as equals—not to rescue, but to be with. Not a templated answer, but room to breathe. Through text, visuals, scents, spaces, touch, and conversation, we bridge the inner sense of safety with the world outside.</p>
+  </div>
+</section>
+
+<section id="roadmap" class="section">
+  <div class="panel">
+    <h2 style="margin-top:0">Roadmap</h2>
+    <div class="road">
+      <div class="mile">
+        <h4>Q1 · Online content</h4>
+        <p>Launch “Daily Healing” notes & illustration series and start a newsletter.</p>
+      </div>
+      <div class="mile">
+        <h4>Q2 · Five-senses goods</h4>
+        <p>Release scent cards / mini candles and quote cards: Hope · Calm · Embrace.</p>
+      </div>
+      <div class="mile">
+        <h4>Q3 · Experiences & spaces</h4>
+        <p>Pop-up “Healing with the Senses” exhibition: scent, sound, touch, and whitespace.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <div class="panel">
+    <h2 style="margin-top:0">Contact & Social</h2>
+    <p>For collaborations / exhibitions / workshops / cross-disciplinary projects, drop us a line.</p>
+    <div class="social" style="margin-top:10px">
+      <a href="#" aria-label="Instagram">Instagram</a>
+      <a href="#" aria-label="YouTube">YouTube</a>
+      <a href="mailto:hello@example.com" aria-label="Email">Email</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot">
+    <div>© <span id="y"></span> GENAE · Jelly — Gentle, Real, Free.</div>
+    <div class="social">
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
